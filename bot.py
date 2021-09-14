@@ -27,7 +27,7 @@ async def scan_wolt():
             db.query(f'update restaurant set last_status = {status} where id={res[0]}')
             for channel in db.query(f'select channel_id from channel_restaurant where restaurant_id={res[0]}'):
                 channel = client.get_channel(int(channel[0]))
-                channel.send(f"{res[1]} status changed to **{status_name[status]}**")
+                await channel.send(f"{res[1]} status changed to **{status_name[status]}**")
 
 
 @client.command(name='add')
