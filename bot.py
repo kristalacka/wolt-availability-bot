@@ -24,7 +24,7 @@ async def scan_wolt():
         link = res[2]
         status = check_status(link)
         if status != res[3]:
-            db.query(f'update restaurant set status = {status} where id={res[0]}')
+            db.query(f'update restaurant set last_status = {status} where id={res[0]}')
             for channel in db.query(f'select channel_id from channel_restaurant where restaurant_id={res[0]}'):
                 channel = client.get_channel(int(channel[0]))
                 channel.send(f"{res[1]} status changed to **{status_name[status]}**")
