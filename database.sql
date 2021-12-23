@@ -1,0 +1,13 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE channel_restaurant(channel_id text, restaurant_id integer);
+INSERT INTO channel_restaurant VALUES('702099820655018034',1);
+INSERT INTO channel_restaurant VALUES('887303998086983680',1);
+INSERT INTO channel_restaurant VALUES('702099820655018034',3);
+CREATE TABLE restaurant(id integer primary key autoincrement, name text, link text, last_status smallint);
+INSERT INTO restaurant VALUES(1,'chick-n-roll','https://wolt.com/en/ltu/kaunas/restaurant/chick-n-roll',0);
+INSERT INTO restaurant VALUES(2,'doda-savanoriu-pr','https://wolt.com/en/ltu/kaunas/restaurant/doda-savanoriu-pr',0);
+INSERT INTO restaurant VALUES(3,'crisperia-v-kreves-pr','https://wolt.com/lt/ltu/kaunas/restaurant/crisperia-v-kreves-pr',1);
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('restaurant',3);
+COMMIT;

@@ -1,8 +1,3 @@
-todo: add chat bot gpt3
-todo: add database
-database plan:
-restaurant id, every restaurant has many channels (text channels to update)
-
 `add command:
 adds restaurant
 every restaurant can have multiple channels where the status updates are sent
